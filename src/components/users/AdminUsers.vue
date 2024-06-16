@@ -1,7 +1,7 @@
 <template>
     <div class="users-page">
       <header class="header">
-        <div class="brand">OrganizeHub</div>
+        <router-link to="/" class="brand">OrganizeHub</router-link>
         <div class="buttons">
           <router-link to="/dashboard" class="dashboard-button">
             <el-button type="primary" round size="large">Dashboard</el-button>
@@ -81,7 +81,8 @@
     },
     methods: {
       logout() {
-        // Implement logout logic if needed
+        this.$store.commit('clearUser');
+        this.$router.push('/'); // Redirect to login or home page
       },
       fetchUsers() {
         axios.get('/users') // Update with your actual backend API endpoint
@@ -131,10 +132,12 @@
         // Implement delete user functionality if needed
         console.log('Deleting user with ID:', userId);
       }
+      
     },
     created() {
       this.fetchUsers(); // Fetch users when component is created
     }
+    
   };
   </script>
   
@@ -149,11 +152,11 @@
   }
   
   .brand {
-    color: #020202;
-    font-size: 2rem;
-    z-index: 1;
-  }
-  
+  color: #020202;
+  font-size: 2rem;
+  z-index: 1;
+  text-decoration: none;
+}
   .buttons {
     z-index: 1;
   }

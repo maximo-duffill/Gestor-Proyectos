@@ -3,7 +3,9 @@
     <header class="header">
       <div class="header-buttons">
         <router-link to="/" class="brand">OrganizeHub</router-link>
-        
+        <router-link to="/users" class="admin-button">
+            <el-button type="primary" round size="large">Users</el-button>
+        </router-link>
         <div class="user-info" v-if="loggedInUser">
           <div class="user-info-text">Logged in as {{ loggedInUser.email  }}</div>
           <el-button type="primary" @click="logout">Logout</el-button>
@@ -150,6 +152,11 @@ export default {
 .user-info-text + el-button {
   margin-left: 10px; /* Space between "Logged in as" and "Logout" */
 }
+
+.dashboard-button,
+  .admin-button {
+    padding-right: 10px; /* Adjust spacing as needed */
+  }
 
 .el-button {
   padding: 0.5rem 1rem;
