@@ -12,11 +12,9 @@
     color: #00aaff;
     padding: 20px;
     text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
+    position:relative;
+
+    width: 100vw;
   }
   
   p {

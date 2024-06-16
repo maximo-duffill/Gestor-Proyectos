@@ -18,6 +18,15 @@ const routes = [
     path: '/dashboard',
     component: () => import('.//components/DashBoard.vue'), // Create a Login component
   },
+  {
+    path: '/users',
+    component: () => import('.//components/users/AdminUsers.vue'), // Create Admin component
+  },
+  {
+    path: '/details',
+    component: () => import('.//components/projectDetails/DetailsProject.vue'), // Create details component
+  },
+
 ];
 
 const router = createRouter({

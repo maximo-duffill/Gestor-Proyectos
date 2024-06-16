@@ -13,15 +13,41 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-  props: {
-    activeUser: Object,
-    messages: Array,
+  components: {
+    UserListComponent,
+    ChatComponent,
+  },
+  data() {
+    return {
+      users: [],
+      chatOpen: false,
+      selectedUser: null,
+    };
+  },
+  created() {
+    // Fetch users when the parent component is created
+    this.fetchUsers();
   },
   methods: {
-    closeChat() {
-      // Emit an event to notify the parent component to close the chat
-      this.$emit('close-chat');
+    async fetchUsers() {
+      try {
+        const response = await axios.get('http://localhost:3000/users');
+        this.users = response.data.users;
+      } catch (error) {
+        console.error('Error fetching users:', error);
+      }
+    },
+    onUsersFetched(users) {
+      // Update the users list when emitted from UserListComponent
+      this.users = users;
+    },
+    openChat(user) {
+      // Set the selectedUser and open chat
+      this.selectedUser = user;
+      this.chatOpen = true;
     },
   },
 };

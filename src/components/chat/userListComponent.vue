@@ -1,7 +1,6 @@
-<!-- UserListComponent.vue -->
 <template>
   <div class="user-list">
-    <div v-for="user in users" :key="user.id" @click="openChat(user)">
+    <div v-for="user in users" :key="user.id" class="user-box" @click="openChat(user)">
       {{ user.email }}
     </div>
   </div>
@@ -19,6 +18,7 @@ export default {
   methods: {
     async fetchUsers() {
       try {
+        console.log("hahha");
         const response = await axios.get('http://localhost:3000/users');
         // Emit an event to the parent component with the fetched users
         this.$emit('users-fetched', response.data);
@@ -37,6 +37,17 @@ export default {
 <style scoped>
 .user-list {
   padding: 10px;
+}
+
+.user-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
   background-color: #f0f0f0;
+}
+
+.user-box:hover {
+  background-color: #e0e0e0;
 }
 </style>

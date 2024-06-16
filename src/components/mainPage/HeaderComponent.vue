@@ -13,6 +13,11 @@
       <router-link to="/dashboard" class="dashboard-button">
         <el-button type="primary" round size="large">Dashboard</el-button>
       </router-link>
+      <template v-if="loggedInUser.role = 'admin'">
+        <router-link to="/users" class="admin-button">
+          <el-button type="primary" round size="large">Users</el-button>
+        </router-link>
+      </template>
       <div class="logged-in">
         Logged in as {{ loggedInUser.email }}
       </div>
