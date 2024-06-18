@@ -1,7 +1,14 @@
-const { defineConfig } = require('@vue/cli-service')
-module.exports = defineConfig({
+
+module.exports = {
   devServer: {
-    host: '0.0.0.0', // Allows the server to be accessible externally
-    port: 8080,
+    host: '0.0.0.0',
+    port: 8080
   },
-})
+  development: {
+    username: 'root',
+    password: '',
+    database: 'project_management',
+    host: 'localhost',
+    dialect: 'mysql'
+},
+};
