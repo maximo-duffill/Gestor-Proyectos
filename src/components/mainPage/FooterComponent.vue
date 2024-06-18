@@ -12,9 +12,9 @@
     color: #00aaff;
     padding: 20px;
     text-align: center;
-    position:relative;
+    position: relative;
 
-    width: 100vw;
+    width: 100%;
   }
   
   p {

@@ -55,7 +55,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh; /* Full viewport height */
-  min-width: 100vw; /* Full viewport width */
+  width: 100vw; /* Full viewport width */
   background-color: #f0f0f0; /* Fallback background color */
   background-image: url('@/assets/Pictures/WorldGlobe.jpg');
   background-size: cover;
@@ -63,6 +63,8 @@
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
 h1 {

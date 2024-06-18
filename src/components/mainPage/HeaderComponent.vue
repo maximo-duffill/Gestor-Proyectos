@@ -42,6 +42,10 @@ export default {
 </script>
 
 <style scoped>
+.body{
+  margin: 0;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -49,6 +53,7 @@ export default {
   padding: 20px;
   position: relative;
   background-color: rgba(26, 26, 26, 0.7);
+  width: 100%
 }
 
 .brand {

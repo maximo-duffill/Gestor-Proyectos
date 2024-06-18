@@ -7,7 +7,7 @@ const crypto = require('crypto');
 const bcrypt = require('bcrypt');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 // Replace with your Google OAuth credentials
 const CLIENT_ID = '514701112146-kh4am8b76af8rhgsf16qj7r9qie93bd1.apps.googleusercontent.com';
